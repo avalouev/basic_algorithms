@@ -5,12 +5,13 @@ def counting_sort(A, B, k):
 	C = [0] * k
 	for j in range(len(A)):
 		C[A[j]] = C[A[j]] + 1
-	# C now contains the number of elements equal to i
+	# C now contains the number of elements equal to i+1
 
 	for i in range(k):
 		C[i] = C[i] + C[i-1]
-	# C now contains the number of elements less than or equal to i
+	# C now contains the number of elements less than or equal to i+1
 
+	# sort elements
 	for j in range(len(A)-1, -1, -1):
 		assert(C[A[j]]-1 < len(B)) # increase k if this fails
 		B[C[A[j]]-1] = A[j]
