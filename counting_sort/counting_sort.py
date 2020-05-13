@@ -1,4 +1,6 @@
 def counting_sort(A, B, k):
+	assert(len(A) == len(B)) # input and sorted output sizes match
+
 	# init temp list for working storage
 	C = [0] * k
 	for j in range(len(A)):
@@ -10,6 +12,7 @@ def counting_sort(A, B, k):
 	# C now contains the number of elements less than or equal to i
 
 	for j in range(len(A)-1, -1, -1):
+		assert(C[A[j]]-1 < len(B)) # increase k if this fails
 		B[C[A[j]]-1] = A[j]
 		C[A[j]] = C[A[j]] -1
 
@@ -28,13 +31,12 @@ def main():
 	for i in range(len(a)):
 		if(max_a < a[i]):
 			max_a = a[i]
-	print("max_a: " + str(max_a))
 
 	assert(max_a < 10000) # too much memory would be required otherwise
 
 	print("Before sorting: " + str(a))
 	counting_sort(a, sorted_a, max_a+2)
-	print("After sorting: " + str(sorted_a))
+	print("After sorting:  " + str(sorted_a))
 
 if __name__ == "__main__":
 	main()
