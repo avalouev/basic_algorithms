@@ -48,7 +48,5 @@ def main():
 	a_sorted = bucket_sort(a)
 	print("After sorting:  " + str(a_sorted))
 
-
-
 if __name__ == "__main__":
 	main()
