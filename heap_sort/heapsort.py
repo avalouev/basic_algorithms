@@ -1,4 +1,6 @@
-#import heap as heap
+import sys
+sys.path.insert(1, './../heap/')
+
 from heap import heap
 
 def test_max_heap():
