@@ -275,7 +275,6 @@ def test():
 
 
 def main():
-	print("Printing from main")
 	test()
 
 if __name__ == "__main__":
