@@ -159,7 +159,7 @@ class binary_search_tree:
 				self.right[self.p[y]] = x
 
 		if(y!=z):
-			self.key[z] <- self.key[y]
+			self.key[z] = self.key[y]
 
 		return y
 		return
